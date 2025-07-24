@@ -24,13 +24,13 @@ const Services = () => {
       const data = await res.json();
       setServices(data);
     };
-    const createService = async () => {
-  await fetch('/api/services', {
-    method: 'POST',
-    body: JSON.stringify({  title: " Noteworthy technology acquisitions 2021", description:" Here are the biggest enterprise technology acquisitions of 2021 so far,in reverse chronological order." }),
-    headers: { 'Content-Type': 'application/json' },
-  });
-};
+//     const createService = async () => {
+//   await fetch('/api/services', {
+//     method: 'POST',
+//     body: JSON.stringify({  title: " Noteworthy technology acquisitions 2021", description:" Here are the biggest enterprise technology acquisitions of 2021 so far,in reverse chronological order." }),
+//     headers: { 'Content-Type': 'application/json' },
+//   });
+// };
     fetchServices();
   }, []);
 

@@ -19,7 +19,7 @@ export default function CbicNewsPage() {
         const data = await res.json();
         setNews(data.news);
       } catch (err) {
-        console.error("Failed to fetch CBIC news", err);
+        console.error(err);
       } finally {
         setLoading(false);
       }

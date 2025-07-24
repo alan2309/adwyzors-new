@@ -26,7 +26,7 @@ const About = () => {
     <div>
       <div className="flex justify-center  items-center mt-15 mb-10 py-2">
         <h1 className="about mb-2 text-[200%] font-bold tracking-tight">
-          Company's Catered To....
+          Company&apos;s Catered To....
         </h1>
         <div className="absolute translate-y-7 bg-cyan-700 mt-4 w-[110px] h-2 rounded-lg "></div>
       </div>

@@ -56,25 +56,25 @@ const Page = () => {
         setLoading(false)
       }
     }
-const createJob = async () => {
-      await fetch("/api/jobs", {
-        method: "POST",
-        body: JSON.stringify({
-          title: "Senior Tax Consultant",
-          experience: "3-5 years",
-          description:
-            "Lead tax planning strategies and provide expert advice to high-net-worth clients and businesses.",
-          requirements: [
-            "CA qualification with specialization in taxation",
-            "Minimum 3 years of experience in direct & indirect taxation",
-            "Strong knowledge of GST, Income Tax, and corporate tax laws",
-            "Client relationship management experience",
-            "Excellent analytical and problem-solving skills",
-            "Proficiency in tax software and MS Office",
-          ],
-        }),
-        headers: { "Content-Type": "application/json" },
-      })}
+// const createJob = async () => {
+//       await fetch("/api/jobs", {
+//         method: "POST",
+//         body: JSON.stringify({
+//           title: "Senior Tax Consultant",
+//           experience: "3-5 years",
+//           description:
+//             "Lead tax planning strategies and provide expert advice to high-net-worth clients and businesses.",
+//           requirements: [
+//             "CA qualification with specialization in taxation",
+//             "Minimum 3 years of experience in direct & indirect taxation",
+//             "Strong knowledge of GST, Income Tax, and corporate tax laws",
+//             "Client relationship management experience",
+//             "Excellent analytical and problem-solving skills",
+//             "Proficiency in tax software and MS Office",
+//           ],
+//         }),
+//         headers: { "Content-Type": "application/json" },
+//       })}
     fetchJobs()
   }, [])
 
@@ -254,7 +254,7 @@ const createJob = async () => {
             <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">ADWYZORS</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-600 mt-4 mb-6">
-            Build your career with us and be part of a team that's dedicated to financial excellence and client success.
+            Build your career with us and be part of a team that&apos;s dedicated to financial excellence and client success.
           </p>
           <Link href="/career#jobs">
           <Button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-6 py-3 text-lg font-semibold">
@@ -293,7 +293,7 @@ const createJob = async () => {
       {/* Looking For Section */}
       <section ref={lookingRef} className="py-16 bg-gray-50">
         <div className="text-center max-w-3xl mx-auto mb-12 px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What We're Looking For</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">What We&apos;re Looking For</h2>
           <p className="text-gray-600 text-lg">The qualities and skills we value in our team members</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
@@ -313,7 +313,7 @@ const createJob = async () => {
       <section id="jobs" ref={rolesRef} className="py-16 bg-white">
         <div className="text-center max-w-3xl mx-auto mb-12 px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Available Positions & Requirements</h2>
-          <p className="text-gray-600 text-lg">Detailed requirements for each position we're currently hiring for</p>
+          <p className="text-gray-600 text-lg">Detailed requirements for each position we&apos;re currently hiring for</p>
         </div>
 
         {loading ? (
@@ -366,7 +366,7 @@ const createJob = async () => {
       <section className="py-16 bg-gradient-to-r from-cyan-600 to-blue-700 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">Ready to Join Our Team?</h2>
-          <p className="text-lg mb-8">If you meet our requirements and share our values, we'd love to hear from you.</p>
+          <p className="text-lg mb-8">If you meet our requirements and share our values, we&apos;d love to hear from you.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button className="bg-white text-cyan-600 hover:bg-gray-100 font-semibold">Send Your Resume</Button>
             <Button

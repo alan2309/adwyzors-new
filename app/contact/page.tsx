@@ -3,7 +3,7 @@ import Map from "../components/Map"
 import Navbar from "../components/Navbar"
 import Form from "./Form"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, MapPin, User } from "lucide-react"
+import { Mail, Phone, MapPin, User, Link } from "lucide-react"
 
 const ContactPage = () => {
   return (
@@ -15,7 +15,7 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="pt-[15vh] text-4xl md:text-6xl font-bold text-gray-900 py-5">Contact Us</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </div>
       </div>
@@ -70,9 +70,9 @@ const ContactPage = () => {
                     </div>
                     <div className="flex items-center space-x-3 ml-8">
                       <Phone className="h-4 w-4 text-gray-500" />
-                      <a href="tel:9819902363" className="text-blue-600 hover:text-blue-800 transition-colors">
+                      <Link href="tel:9819902363" className="text-blue-600 hover:text-blue-800 transition-colors">
                         +91 98199 02363
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -95,9 +95,9 @@ const ContactPage = () => {
                     </div>
                     <div className="flex items-center space-x-3 ml-8">
                       <Phone className="h-4 w-4 text-gray-500" />
-                      <a href="tel:9819902363" className="text-blue-600 hover:text-blue-800 transition-colors">
+                      <Link href="tel:9819902363" className="text-blue-600 hover:text-blue-800 transition-colors">
                         +91 98199 02363
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>

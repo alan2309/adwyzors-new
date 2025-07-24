@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/all";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -58,7 +59,7 @@ const Parallax = () => {
       ref={container}
       className="main relative h-[100vh] mt-0 w-full overflow-hidden"
     >
-      <img
+      <Image
         ref={imageref}
         className="blur-xs h-[100vh] w-full object-cover scale-[2]"
         src="/parallax/back4.jpg"

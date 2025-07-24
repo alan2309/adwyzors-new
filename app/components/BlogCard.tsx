@@ -3,14 +3,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 
-const BlogCard = ({ id = 0, title="", description= "" ,url="",imgurl=""}) => {
+const BlogCard = ({title="", description= "" ,url="",imgurl=""}) => {
   return (
     <Card className="flex-shrink-0 w-80 md:w-96 bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group overflow-hidden">
       {/* Blog Image */}
       <div className="relative overflow-hidden">
-        <img
+        <Image
           src={imgurl}
           alt="Blog post thumbnail"
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"

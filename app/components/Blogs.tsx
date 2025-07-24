@@ -179,7 +179,7 @@ const Blogs = () => {
             {posts.map((blog, index) => (
               <div key={index} className="blog-card flex-shrink-0">
                 <BlogCard
-                  id={index}
+                  key={index}
                   title={blog.title}
                   description={blog.description}
                   url={blog.url}

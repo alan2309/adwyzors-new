@@ -4,6 +4,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowUp, Calendar } from "lucide-react"
+import Link from "next/link"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -214,12 +215,12 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
+            <Link href="#" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
               Terms of Service
-            </a>
+            </Link>
             <button
               onClick={scrollToTop}
               className="p-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-lg"

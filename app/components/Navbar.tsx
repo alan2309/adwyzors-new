@@ -5,6 +5,7 @@ import Image from "next/image"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
+import Link from "next/link"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -15,35 +16,35 @@ const Navbar = () => {
   useGSAP(() => {
     if (navRef.current) {
       // Create timeline for navbar background changes
-      const navTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: "100px top",
-          scrub: 1,
-          onUpdate: (self) => {
-            // When scrolling down from hero section
-            if (self.progress > 0) {
-              gsap.to(navRef.current, {
-                backgroundColor: "rgba(255, 255, 255, 0.7)",
-                backdropFilter: "blur(10px)",
-                color:"rgba(0, 0, 0,1)",
-                duration: 0.3,
-                ease: "power2.out",
-              })
-            } else {
-              // When at the top (hero section)
-              gsap.to(navRef.current, {
-                backgroundColor: "transparent",
-                color:"rgba(255, 255, 255,1)",
-                backdropFilter: "blur(0px)",
-                duration: 0.3,
-                ease: "power2.out",
-              })
-            }
-          },
-        },
-      })
+      // const navTimeline = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: "body",
+      //     start: "top top",
+      //     end: "100px top",
+      //     scrub: 1,
+      //     onUpdate: (self) => {
+      //       // When scrolling down from hero section
+      //       if (self.progress > 0) {
+      //         gsap.to(navRef.current, {
+      //           backgroundColor: "rgba(255, 255, 255, 0.7)",
+      //           backdropFilter: "blur(10px)",
+      //           color:"rgba(0, 0, 0,1)",
+      //           duration: 0.3,
+      //           ease: "power2.out",
+      //         })
+      //       } else {
+      //         // When at the top (hero section)
+      //         gsap.to(navRef.current, {
+      //           backgroundColor: "transparent",
+      //           color:"rgba(255, 255, 255,1)",
+      //           backdropFilter: "blur(0px)",
+      //           duration: 0.3,
+      //           ease: "power2.out",
+      //         })
+      //       }
+      //     },
+      //   },
+      // })
 
       // Alternative approach using multiple ScrollTriggers for more control
       ScrollTrigger.create({
@@ -111,46 +112,47 @@ const Navbar = () => {
         style={{ backgroundColor: "transparent" }}
       >
         {/* Logo */}
-        <a href="/" className="w-40 cursor-pointer mr-8 top-0">
+        <Link href='/' className="w-40 cursor-pointer mr-8 top-0">
+       
           <Image src={assets.logo || "/placeholder.svg"} alt="ADWYZORS Logo" className="w-full" />
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white/90 backdrop-blur-sm shadow-sm border border-white/10">
           <li>
-            <a href="/#top" className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium">
+            <Link href="/#top" className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/#service-sec"
               className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium"
             >
               Services
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#blog-sec" className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium">
+            <Link href="/#blog-sec" className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium">
               Blogs
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#career-sec" className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium">
+            <Link href="/#career-sec" className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium">
               Career
-            </a>
+            </Link>
           </li>
         </ul>
 
         {/* CTA and Mobile Menu Button */}
         <div className="flex items-center gap-4">
-          <a
+            <Link
             href="/contact"
             className="hidden lg:flex items-center gap-2 px-6 py-2.5 border border-gray-500 rounded-full ml-4 hover:bg-cyan-600 hover:text-white hover:border-cyan-600 transition-all duration-200 font-medium"
           >
             Contact us
             <Image src={assets.arrow_icon || "/placeholder.svg"} className="w-2.5" alt="" />
-          </a>
+          </Link>
 
           <button
             onClick={openmenu}
@@ -174,48 +176,53 @@ const Navbar = () => {
           </div>
 
           <li onClick={closemenu} className="mt-8">
-            <a
+            <Link
+            
               href="/#top"
               className="text-lg font-medium text-gray-800 hover:text-cyan-600 transition-colors duration-200 block py-2"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li onClick={closemenu}>
-            <a
+            <Link
+            
               href="/#service-sec"
               className="text-lg font-medium text-gray-800 hover:text-cyan-600 transition-colors duration-200 block py-2"
             >
               Services
-            </a>
+            </Link>
           </li>
           <li onClick={closemenu}>
-            <a
+            <Link
+            
               href="/#blog-sec"
               className="text-lg font-medium text-gray-800 hover:text-cyan-600 transition-colors duration-200 block py-2"
             >
               Blogs
-            </a>
+            </Link>
           </li>
           <li onClick={closemenu}>
-            <a
+            <Link
+            
               href="/#career-sec"
               className="text-lg font-medium text-gray-800 hover:text-cyan-600 transition-colors duration-200 block py-2"
             >
               Career
-            </a>
+            </Link>
           </li>
 
           {/* Mobile Contact Button */}
           <li className="mt-8">
-            <a
+            <Link
+            
               href="#contact"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-cyan-600 text-white rounded-full font-medium hover:bg-cyan-700 transition-colors duration-200"
               onClick={closemenu}
             >
               Contact us
               <Image src={assets.arrow_icon || "/placeholder.svg"} className="w-2.5 filter invert" alt="" />
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

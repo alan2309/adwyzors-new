@@ -1,10 +1,8 @@
 "use client";
-import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Parallax from "./components/Parallax";
 import Services from "./components/Services";
-import Card from "./components/Card";
 import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
 import Careers from "./components/Careers";

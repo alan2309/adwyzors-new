@@ -1,13 +1,12 @@
-"use client";
+"use client"
 import { useRef } from "react"
-import Link from "next/link";
-import gsap from "gsap" 
+import Link from "next/link"
+import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/all"
 import { useGSAP } from "@gsap/react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Play, Star, Users, Award, TrendingUp } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText)
 
@@ -27,15 +26,6 @@ const Hero = () => {
       opacity: 0,
       y: 50,
     })
-
-    // Badge animation
-    // gsap.from(".hero-badge", {
-    //   opacity: 0,
-    //   scale: 0.8,
-    //   duration: 0.8,
-    //   ease: "back.out(1.7)",
-    //   delay: 0.2,
-    // })
 
     // Title animation - animate the container instead of splitting gradient text
     tl.to(
@@ -127,13 +117,20 @@ const Hero = () => {
       },
     })
 
-    // Stats counter animation
-    gsap.to(".counter", {
-      textContent: (i: any, target: { getAttribute: (arg0: string) => any }) => target.getAttribute("data-count"),
-      duration: 2,
-      ease: "power2.out",
-      snap: { textContent: 1 },
-      delay: 2.5,
+    // Stats counter animation with proper typing
+    const counters = document.querySelectorAll(".counter")
+    counters.forEach((counter) => {
+      const target = counter as HTMLElement
+      const countValue = target.getAttribute("data-count")
+      if (countValue) {
+        gsap.to(target, {
+          textContent: countValue,
+          duration: 2,
+          ease: "power2.out",
+          snap: { textContent: 1 },
+          delay: 2.5,
+        })
+      }
     })
   }, [])
 
@@ -174,8 +171,6 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 sm:py-12">
-      
-
         {/* Main Title */}
         <div
           ref={titleRef}
@@ -198,30 +193,22 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 px-4">
-         <Link href="/#service-sec">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-2xl hover:shadow-cyan-500/25 transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
-          >
-            Get Started Today
-            <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-          </Button>
-</Link>
-          {/* <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-white/30 text-white hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold backdrop-blur-sm bg-transparent w-full sm:w-auto"
-          >
-            <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-            Watch Demo
-          </Button> */}
+          <Link href="/#service-sec">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-2xl hover:shadow-cyan-500/25 transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+            >
+              Get Started Today
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+            </Button>
+          </Link>
         </div>
 
-        {/* Stats Section */}
-        {/* <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto px-4">
+        {/* Stats Section - Uncommented and fixed */}
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto px-4">
           <div className="text-center">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <Users className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2" />
+              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">👥</div>
             </div>
             <div
               className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2"
@@ -234,7 +221,7 @@ const Hero = () => {
 
           <div className="text-center">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <Award className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2" />
+              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">🏆</div>
             </div>
             <div className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2" data-count="15">
               0
@@ -244,7 +231,7 @@ const Hero = () => {
 
           <div className="text-center">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2" />
+              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">📈</div>
             </div>
             <div className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2" data-count="98">
               0
@@ -254,22 +241,22 @@ const Hero = () => {
 
           <div className="text-center">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <Star className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2" />
+              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">⭐</div>
             </div>
             <div className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2" data-count="24">
               0
             </div>
             <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wide">Awards Won</div>
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* Scroll Indicator */}
-      {/* <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }
