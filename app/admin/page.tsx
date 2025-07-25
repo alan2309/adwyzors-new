@@ -100,7 +100,7 @@ const AdminPage = () => {
       const res = await fetch(`/api/jobs/${editingJob._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id: editingJob._id, ...jobForm }),
+        body: JSON.stringify(jobForm),
       })
       if (res.ok) {
         fetchJobs()
