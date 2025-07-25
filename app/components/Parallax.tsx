@@ -64,6 +64,8 @@ const Parallax = () => {
         className="blur-xs h-[100vh] w-full object-cover scale-[2]"
         src="/parallax/back4.jpg"
         alt=""
+        width={500} 
+        height={500}
       />
 
       <h1 className="absolute flex flex-col md:top-1/3 top-1/5 left-1/4 text-white">
