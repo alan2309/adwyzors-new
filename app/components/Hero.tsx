@@ -203,59 +203,6 @@ const Hero = () => {
             </Button>
           </Link>
         </div>
-
-        {/* Stats Section - Uncommented and fixed */}
-        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto px-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">👥</div>
-            </div>
-            <div
-              className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2"
-              data-count="500"
-            >
-              0
-            </div>
-            <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wide">Happy Clients</div>
-          </div>
-
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">🏆</div>
-            </div>
-            <div className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2" data-count="15">
-              0
-            </div>
-            <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wide">Years Experience</div>
-          </div>
-
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">📈</div>
-            </div>
-            <div className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2" data-count="98">
-              0
-            </div>
-            <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wide">Success Rate %</div>
-          </div>
-
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <div className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400 mr-2">⭐</div>
-            </div>
-            <div className="counter text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2" data-count="24">
-              0
-            </div>
-            <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wide">Awards Won</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
-        </div>
       </div>
     </section>
   )
